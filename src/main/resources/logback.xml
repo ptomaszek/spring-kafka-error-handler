@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <Target>System.out</Target>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%t] [%5p] %c{0}:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.example" additivity="false" level="DEBUG">
+        <appender-ref ref="stdout"/>
+    </logger>
+    <logger name="org.springframework" additivity="false" level="WARN">
+        <appender-ref ref="stdout"/>
+    </logger>
+    <logger name="org.springframework.kafka.listener" additivity="false" level="DEBUG">
+        <appender-ref ref="stdout"/>
+    </logger>
+</configuration>
